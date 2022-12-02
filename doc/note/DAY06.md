@@ -127,6 +127,14 @@ const routes = [
 - `<style>`：设计页面元素的样式，即编写CSS代码
 - `<script>`：用于编写JavaScript程序代码
 
+# 35. 应用Element UI
+
+首先，需要通过`npm`命令安装Element UI：
+
+```
+npm i element-ui -S
+```
+
 
 
 
