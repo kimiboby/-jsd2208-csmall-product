@@ -79,13 +79,44 @@ const routes = [
 
 可以看到，以上配置的是路由中的绑定关系，即根路径`/`绑定了`HomeView`视图组件，而`/about`路径绑定了`AboutView`视图组件，所以，在`App.vue`中的`<router-view>`会根据实际访问的URL选择性的显示`HomeView`或`AboutView`中的内容！
 
+注意：在任何一个视图组件中，最多只能有1个`<router-view/>`标签！
 
+# 33. 关于路由配置
 
+在`src/router`文件夹下的是路由配置文件。
 
+在配置文件中，主要使用路由对象的数组表示路由配置，例如：
 
+```javascript
+const routes = [
+  // 暂时省略此处的配置代码
+]
+```
 
+数组元素是一个个的路由对象，每个路由对象至少需要配置`path`和`component`这2个属性，其中，`path`表示“路由”，`component`表示“视图组件”，例如：
 
+```java
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: () => import('../views/AboutView.vue')
+  }
+]
+```
 
+以上配置中的`name`属性并不是必须的！
+
+关于`component`属性的值，有2种写法：
+
+- 在当前文件顶部使用`import`语句导入某个视图组件，并指定名称，`component`属性的值就是此名称
+  - 通常，每个项目只有1个路由配置使用这种方式导入视图组件
+- 使用`import()`函数导入某个视图组件，作为`component`属性的值
 
 
 
