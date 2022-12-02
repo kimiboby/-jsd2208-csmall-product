@@ -135,7 +135,17 @@ const routes = [
 npm i element-ui -S
 ```
 
+安装完成后，还需要在`main.js`中添加配置：
 
+```javascript
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+```
+
+如下图所示：
+
+![image-20221202172303904](images/image-20221202172303904.png)
 
 
 
